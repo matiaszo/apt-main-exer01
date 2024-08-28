@@ -1,21 +1,13 @@
 // Declaração da variável produtos fora do escopo do evento para torná-la global
 let produtos;
 
-window.onload = function () {
-  var storedUser = localStorage.getItem("usuario");
-  var user = JSON.parse(storedUser);
-  document.getElementById("user").textContent = user.name;
-  // document.getElementById("perfil").textContent = user.name;
-  document.getElementById("idPerfil").textContent = user.id;
-};
-
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("../Dados/loja.json")
+  fetch("../Dados/showroom.json")
     .then((response) => response.json())
     .then((data) => {
       produtos = data;
       const produtosContainer =
-        document.getElementsByTagName("produtos-container");
+        document.getElementById("produtos-container");
 
       produtos.map((produto, index) => {
         const card = document.createElement("div");
@@ -30,13 +22,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
 
+        let circulo = document.createElement("div");
+        if (produto.status){
+            circulo.style.backgroundColor = "#00FF00";
+        }else {
+            circulo.style.backgroundColor = "#FF0000";
+        };
+        circulo.style.width = "10px"
+        circulo.style.height = "10px"
+        circulo.style.borderRadius = "50%"
+
         const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";
+        cardTitle.className = "card-title";     
         cardTitle.textContent = produto.descricao;
+
 
         const cardText = document.createElement("p");
         cardText.className = "card-text";
         cardText.textContent = "Preço: $" + produto.preco.toFixed(2);
+
+        
 
         const btnAdicionarAoCarrinho = document.createElement("a");
         btnAdicionarAoCarrinho.href = "#";
@@ -46,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btnAdicionarAoCarrinho.setAttribute("data-indice", index);
 
         cardBody.appendChild(cardTitle);
+        cardBody.appendChild(circulo);
         cardBody.appendChild(cardText);
         cardBody.appendChild(btnAdicionarAoCarrinho);
 
@@ -56,16 +62,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     })
     .catch((error) => console.error("Erro ao carregar o arquivo JSON", error));
-
-  $("#produtos-container").on(
-    "click",
-    ".btn-adicionar-ao-carrinho",
-    function () {
-      const indexDoProduto = $(this).data("indice");
-      const produtoSelecionado = produtos[indexDoProduto];
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-      carrinho.push(produtoSelecionado);
-      localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    }
-  );
 });
