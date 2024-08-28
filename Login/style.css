@@ -39,3 +39,16 @@ input {
   padding: 5px;
   border: 2px solid #909090;
 }
+
+.modal{
+  display: none;
+  position: absolute;
+  justify-content: center;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 10vw;
+  height: 10vh;
+  overflow: auto;
+  background-color: #00000080;
+}
