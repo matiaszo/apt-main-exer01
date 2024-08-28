@@ -15,12 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.width = "18rem";
         card.style.marginRight = "10px";
 
-        const imagem = document.createElement("img");
-        imagem.src = produto.imagem;
-        imagem.className = "card-img-top";
-
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
+
+        const cardTitle = document.createElement("h5");
+        cardTitle.className = "card-title";     
+        cardTitle.textContent = produto.descricao;
+
+        const cardText = document.createElement("p");
+        cardText.className = "card-text";
+        cardText.textContent = "Preço: $" + produto.preco.toFixed(2);
+
+        const imagem = document.createElement("img");
+        imagem.style.width = "100%"
+        imagem.style.aspectRatio = 1;
+        imagem.style.objectFit = "contain"
+        imagem.src = produto.imagem;
+        imagem.className = "card-img";
+
 
         let circulo = document.createElement("div");
         if (produto.status){
@@ -32,28 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
         circulo.style.height = "10px"
         circulo.style.borderRadius = "50%"
 
-        const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";     
-        cardTitle.textContent = produto.descricao;
 
-
-        const cardText = document.createElement("p");
-        cardText.className = "card-text";
-        cardText.textContent = "Preço: $" + produto.preco.toFixed(2);
-
-        
-
-        const btnAdicionarAoCarrinho = document.createElement("a");
-        btnAdicionarAoCarrinho.href = "#";
-        btnAdicionarAoCarrinho.className =
-          "btn btn-primary btn-adicionar-ao-carrinho";
-        btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
-        btnAdicionarAoCarrinho.setAttribute("data-indice", index);
 
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(circulo);
         cardBody.appendChild(cardText);
-        cardBody.appendChild(btnAdicionarAoCarrinho);
 
         card.appendChild(imagem);
         card.appendChild(cardBody);
