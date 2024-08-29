@@ -2,19 +2,55 @@
   {
     "id": 1,
     "descricao": "Produto 1",
-    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm3cExnsB3qat_a-YqS4zThCXsiR4TWk2f4_-Do7MXhw&s",
-    "preco": 10.0
+    "imagem": "../img/coxa.png",
+    "preco": 1000.0
   },
   {
     "id": 2,
     "descricao": "Produto 2",
-    "imagem": "https://storage.alboom.ninja/sites/7474/albuns/343827/fotografia-de-produtos-campinas-fotografo-publicidade-aloha-life-11.jpg?t=1541510096",
-    "preco": 20.0
+    "imagem": "../img/cap.png",
+    "preco": 1.0
   },
   {
     "id": 3,
     "descricao": "Produto 3",
-    "imagem": "https://skinquer.com.br/cdn/shop/articles/blogordem.jpg?v=1687270129",
-    "preco": 30.0
+    "imagem": "../img/corinthians.png",
+    "preco": 35.0
+  },
+  {
+    "id": 4,
+    "descricao": "Produto 4",
+    "imagem": "../img/flamengo.png",
+    "preco": 2.0
+  },
+  {
+    "id": 5,
+    "descricao": "Produto 5",
+    "imagem": "../img/parana.png",
+    "preco": 10.0
+  },
+  {
+    "id": 6,
+    "descricao": "Produto 6",
+    "imagem": "../img/avai.png",
+    "preco": 15.0
+  },
+  {
+    "id": 7,
+    "descricao": "Produto 7",
+    "imagem": "../img/saopaulo.png",
+    "preco": 20.0
+  },
+  {
+    "id": 8,
+    "descricao": "Produto 8",
+    "imagem": "../img/ibis.png",
+    "preco": 500.0
+  },
+  {
+    "id": 9,
+    "descricao": "Produto 9",
+    "imagem": "../img/palmeiras.png",
+    "preco": 700.0
   }
 ]
