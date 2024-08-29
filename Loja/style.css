@@ -6,58 +6,34 @@
   
   body {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+
   }
   
-  .container {
+  
+  main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2vh;
-    width: 80%;
-    height: auto;
-    margin-bottom: 4vh;
-  }
-  
-  .key {
-    position: absolute;
-    top: 2px;
-    right: 10px;
-    opacity: 0.6;
-  }
-  .key:hover {
-    cursor: pointer;
-    opacity: 1;
-  }
-  
-  input {
-    padding: 5px;
-    border: 2px solid #909090;
+    /* width: 100vw; */
+    flex-direction: row;
   }
 
-  .wrap {
+
+   #produtos-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+
     height: auto;
-    flex-wrap: wrap;
-    padding: 5%;
+    flex-wrap: wrap; 
+    padding: 5%; 
+  } 
+
+  #produtos-container img{
+    width: 200px;
   }
-  .idPerfil {
+  /* .card{
     display: flex;
     flex-direction: row;
-    gap: 5px;
-  }
-  @media (width <= 900px) {
-    .center {
-      justify-content: center;
-      gap: 2vh;
-    }
-  }
+  } */
+
