@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.width = "18rem";
         card.style.marginRight = "10px";
 
-        const cardTitle = document.createElement("h5");
+        const cardTitle = document.createElement("h5"); 
         cardTitle.className = "card-title";
         cardTitle.textContent = produto.descricao;
 
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
           "btn btn-primary btn-adicionar-ao-carrinho";
         btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
         btnAdicionarAoCarrinho.setAttribute("data-indice", index);
-
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
         cardBody.appendChild(btnAdicionarAoCarrinho);
@@ -66,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
       carrinho.push(produtoSelecionado);
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
+      alert("Produto adicionado ao carrinho!")
     }
   );
 });
