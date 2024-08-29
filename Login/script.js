@@ -14,16 +14,25 @@ function login() {
 
     window.location.href = "../Loja/loja.html";
   } else {
-    let modal = document.getElementById("mod")
-    modal.style.display = "block";
+    let modal = document.getElementById("mostrar")
+    modal.style.display = "flex";
   }
 }
 
-const button = document.querySelector("button")
-
-button.onclick
-
 function mostrarModal(){
-  let modal = document.getElementById("mod")
+  let modal = document.getElementById("mostrar")
   modal.style.display = "none";
 }
+
+
+let botaoSenha = document.getElementById("botaoSenha")
+let showSenha = false
+botaoSenha.addEventListener("click", ()=> {
+  let senha = document.getElementById("senha")
+  if(showSenha){
+    senha.type = "text"
+  }else{
+    senha.type = "password"
+  }
+  showSenha = !showSenha
+})
