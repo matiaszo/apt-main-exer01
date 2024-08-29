@@ -14,16 +14,26 @@
     
   </head>
   <body>
-    <a href="../Loja/loja.html">Continuar comprando</a>
-    <h1>Carrinho</h1>
-    <div id="lista"></div>
-    <h3 id="total"></h3>
-    <button id="realizar" onclick="gerarDocumentoWord()">Realizar pedido</button>
+    <header>
+      <h1>Carrinho</h1>
+    </header>
 
-    <div class=""></div>
-   
+    <main>
+      <div id="lista"></div>
+      
+      <div class="realizar">
+        <button id="realizar" onclick="gerarDocumentoWord()">Realizar pedido</button>
+      </div>
+      <div class="compra">
+        <a id="compra" href="../Loja/loja.html">Continuar comprando</a>
+      </div>
+    </main>
+
+  <footer>
+    <h3 id="total"></h3>
+  </footer>
     <div id="pedido">
-        <p>Pedido gerado com sucesso
+        <p>Pedido gerado com sucesso!
           <button onclick="esconder()">Fechar</button>
         </p>
       </div>
